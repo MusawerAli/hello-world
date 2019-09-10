@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: '.app-test',
@@ -90,6 +90,12 @@ import { Component, OnInit } from '@angular/core';
             <b>{{f}}{{car}}</b>
             </div>
 
+            <hr>
+            <h2>@Input @output Decorator</h2>
+
+            <h4>{{parentData}}</h4>
+            <h3>{{"Hello" + pname}}</h3>
+            <button (click)="fireEvent()">Output Decorator</button>
           `,
           styles: [`
   div {
@@ -121,7 +127,10 @@ export class TestComponent implements OnInit {
   public displayName = true;
   public condition = false;
   public color = "blue";
+  @Output() public childEvent = new EventEmitter();
 
+  @Input() public parentData;
+  @Input('parentData') public pname;
   public cars = ["BMW","MERC","FORD","Bently"];
   public messageClasses = {
     "text-success":!this.hasError,
@@ -159,5 +168,9 @@ export class TestComponent implements OnInit {
   console.log(value);
  }
   public alert = alert('Hello');
+
+  fireEvent(){
+    this.childEvent.emit('Hey Cold');
+  }
 
 }
