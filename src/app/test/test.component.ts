@@ -96,7 +96,28 @@ import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
             <h4>{{parentData}}</h4>
             <h3>{{"Hello" + pname}}</h3>
             <button (click)="fireEvent()">Output Decorator</button>
-          `,
+          <hr>
+            <h2>Pipes</h2>
+            <h4>{{pipes | lowercase}}</h4>
+            <h4>{{pipes | uppercase}}</h4>
+            <h4>{{pipes | titlecase}}</h4>
+            <h4>{{pipes | lowercase}}</h4>
+            <h4>{{pipes | slice:3}}</h4>
+            <h4>{{cars | json}}</h4>
+            <h4>{{5.653 | number:'1.2-2'}}</h4>
+            <h4>{{0.25 | percent}}</h4>
+            <h4>{{0.45 | currency}}</h4>
+            <h4>{{0.45 | currency:'GBP'}}</h4>
+            <h4>{{date | date}}</h4>
+            <h4>{{date | date:'short'}}</h4>
+            <h4>{{date | date:'shortDate'}}</h4>
+            <h4>{{date | date:'shortTime'}}</h4>
+          
+            <h4>{{date | date:'medium'}}</h4>
+            <h4>{{date | date:'mediumDate'}}</h4>
+            <h4>{{date | date:'mediumTime'}}</h4>
+         
+            `,
           styles: [`
   div {
     color:red;
@@ -127,6 +148,8 @@ export class TestComponent implements OnInit {
   public displayName = true;
   public condition = false;
   public color = "blue";
+  public pipes = "hi i m david";
+  public date = new Date();
   @Output() public childEvent = new EventEmitter();
 
   @Input() public parentData;

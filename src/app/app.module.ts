@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { from } from 'rxjs';
+import { EmployeListComponent } from './employe-list/employe-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    EmployeListComponent
   ],
   imports: [
     BrowserModule,
