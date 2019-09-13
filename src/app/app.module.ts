@@ -6,19 +6,23 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { from } from 'rxjs';
 import { EmployeListComponent } from './employe-list/employe-list.component';
-
+import {EmployeeService} from './employee.service';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    EmployeListComponent
+    EmployeListComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
